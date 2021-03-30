@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:velocity/constants.dart';
+import 'package:velocity/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,10 +32,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Container(
-              color: Colors.black,
-              height: 8,
-            ),
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.1,
@@ -64,29 +61,24 @@ class _LoginPageState extends State<LoginPage> {
                     height: size.height * 0.1,
                   ),
                   Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        // TODO Implement Google Sign In
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromRGBO(14, 14, 14, 1),
-                                offset: Offset(0, 6),
-                                blurRadius: 0)
-                          ],
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          border: Border.all(
-                            color: Color.fromRGBO(13, 13, 13, 1),
-                            width: 2,
-                          ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
                         ),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color(0x1a000000),
+                              offset: Offset(0, 6),
+                              blurRadius: 16)
+                        ],
+                        color: Color.fromRGBO(255, 255, 255, 1),
+                      ),
+                      child: MaterialButton(
+                        onPressed: () async {
+                          await signInWithGoogle();
+                        },
+                        padding: EdgeInsets.symmetric(horizontal: 16),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,

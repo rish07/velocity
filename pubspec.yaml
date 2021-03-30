@@ -30,6 +30,11 @@ dependencies:
   cupertino_icons: ^1.0.0
   google_fonts: ^2.0.0
   flutter_svg: ^0.19.3
+  page_transition: ^1.1.7+6
+  google_sign_in: ^5.0.1
+  firebase_core: ^1.0.2
+  firebase_auth: ^1.0.1
+
 
 
 dev_dependencies:
